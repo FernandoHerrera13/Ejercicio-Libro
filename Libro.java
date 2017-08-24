@@ -8,4 +8,15 @@ public class Libro
         titulo=titIni;
         autor=autIni;
     }
+    
+    public String dimeAutor()
+    {
+        return autor;
+    }
+    
+    public String dimeLibro()
+    {
+        return titulo;
+    }
+        
 }
