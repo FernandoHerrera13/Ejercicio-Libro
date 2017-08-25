@@ -4,6 +4,7 @@ public class Libro
     private String autor;
     private int paginas;
     private String numeroDeReferencia;
+    private int prestamos;
     
     public Libro(String titIni,String autIni,int numPag)
     {
@@ -11,6 +12,17 @@ public class Libro
         autor=autIni;
         paginas=numPag;
         numeroDeReferencia="";
+        prestamos=0;
+    }
+    
+    public void prestar()
+    {
+        prestamos+=1;
+    }
+    
+    public int dimePrestamos()
+    {
+        return prestamos;
     }
     
     public String dimeNumRef()
@@ -48,23 +60,26 @@ public class Libro
     public String dimeDetalles()
     {
         String cadResultados="";
-        cadResultados+="AUTOR: ";
-        cadResultados+=autor;
-        cadResultados+="LIBRO: ";
-        cadResultados+=titulo;
-        cadResultados+="No.PAGINAS: ";
-        cadResultados+=paginas;
+        cadResultados+="AUTOR:";
+        cadResultados+=autor+" ";
+        cadResultados+="LIBRO:";
+        cadResultados+=titulo+" ";
+        cadResultados+="No.PAGINAS:";
+        cadResultados+=paginas+" ";
         
         if(numeroDeReferencia.length()>0)
         {
-            cadResultados+="Num.REFERENCIA: ";
-            cadResultados+=numeroDeReferencia;
+            cadResultados+="Num.REFERENCIA:";
+            cadResultados+=numeroDeReferencia+" ";
         }
         else
         {
-            cadResultados+="Num.REFERENCIA: ";
-            cadResultados+="ZZZ";
+            cadResultados+="Num.REFERENCIA:";
+            cadResultados+="ZZZ"+" ";
         }
+        
+        cadResultados+="PRESTAMOS:";
+        cadResultados+=prestamos+" ";
         
         return cadResultados;
     }
