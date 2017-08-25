@@ -20,7 +20,14 @@ public class Libro
     
     public void cambiaNumRef(String NumRefInicial)
     {
-        numeroDeReferencia=NumRefInicial;
+        if(NumRefInicial.length()>=3)
+        {
+            numeroDeReferencia=NumRefInicial;
+        }
+        else
+        {
+            numeroDeReferencia=numeroDeReferencia;
+        }
     }
     
     public String dimeAutor()
